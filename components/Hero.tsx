@@ -179,7 +179,7 @@ export default function Hero() {
                         Ulvia Yulianti
                       </h3>
                       <p className="font-mono text-[10px] text-emerald-300 font-medium">
-                        Frontend Web Developer
+                        Web Developer
                       </p>
                     </div>
                     <span className="rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-2 py-0.5 font-mono text-[9px] text-white/90">
