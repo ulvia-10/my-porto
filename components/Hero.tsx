@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
-import { ArrowDownRight, Download, Copy, Check, Sparkles, MessageSquare, User, Code2 } from "lucide-react";
+import { ArrowDownRight, Copy, Check, Sparkles, MessageSquare, User, Code2 } from "lucide-react";
 import Image from "next/image";
 import profilePic from "../public/ulvia-profile.jpg";
 
@@ -89,16 +89,8 @@ export default function Hero() {
               <ArrowDownRight className="h-4 w-4" />
             </a>
             <a
-              href="/Ulvia_Yulianti_CV.pdf"
-              download
-              className="inline-flex items-center gap-2 rounded-full border border-line bg-paper-surface px-5 py-3.5 font-mono text-xs uppercase tracking-widest text-ink transition-all hover:border-accent hover:text-accent font-medium shadow-xs"
-            >
-              <Download className="h-4 w-4" />
-              Download CV
-            </a>
-            <a
               href="#kontak"
-              className="inline-flex items-center gap-1.5 rounded-full border border-transparent px-4 py-3 font-mono text-xs uppercase tracking-widest text-ink-dim transition-colors hover:text-accent font-medium"
+              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-paper-surface px-5 py-3.5 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:border-accent hover:text-accent font-medium shadow-xs"
             >
               <MessageSquare className="h-3.5 w-3.5" />
               Get in Touch

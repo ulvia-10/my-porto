@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
-import { Menu, X, Download, Sparkles } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 
 const links = [
   { href: "#karya", label: "Work" },
@@ -56,14 +56,6 @@ export default function Nav() {
 
         {/* Actions & Mobile Button */}
         <div className="flex items-center gap-3">
-          <a
-            href="/Ulvia_Yulianti_CV.pdf"
-            download
-            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-line bg-paper-surface px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider text-ink transition-colors hover:border-accent hover:text-accent shadow-sm"
-          >
-            <Download className="h-3 w-3" />
-            <span>CV</span>
-          </a>
           <ThemeToggle />
 
           <button
@@ -92,15 +84,7 @@ export default function Nav() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 pt-4 border-t border-line/60 flex items-center justify-between">
-            <a
-              href="/Ulvia_Yulianti_CV.pdf"
-              download
-              className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 font-mono text-xs uppercase text-ink hover:border-accent"
-            >
-              <Download className="h-3.5 w-3.5" />
-              Download CV
-            </a>
+          <div className="mt-6 pt-4 border-t border-line/60 flex items-center justify-end">
             <a
               href="#kontak"
               onClick={() => setMobileMenuOpen(false)}
