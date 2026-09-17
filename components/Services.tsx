@@ -78,7 +78,7 @@ const services: ServiceItem[] = [
 
 export default function Services() {
   return (
-    <section id="layanan" className="border-t border-line/60 py-24 bg-paper-surface/30">
+    <section id="services" className="border-t border-line/60 py-24 bg-paper-surface/30">
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-14 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
@@ -141,7 +141,7 @@ export default function Services() {
 
                 <div className="mt-8 pt-4">
                   <a
-                    href="#kontak"
+                    href="#contact"
                     className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-ink font-semibold group-hover:text-accent transition-colors"
                   >
                     <span>Start a Project</span>

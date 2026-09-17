@@ -120,7 +120,7 @@ export default function Projects() {
       : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="karya" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="work" className="mx-auto max-w-5xl px-6 py-24">
       <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent flex items-center gap-1.5">

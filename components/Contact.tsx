@@ -49,7 +49,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="kontak" className="mx-auto max-w-5xl px-6 py-28 border-t border-line/60">
+    <section id="contact" className="mx-auto max-w-5xl px-6 py-28 border-t border-line/60">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
         {/* Left Column: Social & Email */}
         <div>

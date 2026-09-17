@@ -5,11 +5,11 @@ import ThemeToggle from "./ThemeToggle";
 import { Menu, X, Sparkles } from "lucide-react";
 
 const links = [
-  { href: "#karya", label: "Work" },
-  { href: "#layanan", label: "Services" },
-  { href: "#keahlian", label: "Skills" },
-  { href: "#tentang", label: "About" },
-  { href: "#kontak", label: "Contact" },
+  { href: "#work", label: "Work" },
+  { href: "#services", label: "Services" },
+  { href: "#skills", label: "Skills" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -27,7 +27,7 @@ export default function Nav() {
             <span>ulviay<span className="text-accent">.</span>dev</span>
           </a>
           <a
-            href="#kontak"
+            href="#contact"
             className="hidden lg:inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-emerald-600 dark:text-emerald-400 transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/20 hover:scale-105 group"
           >
             <span className="relative flex h-2 w-2">
@@ -86,7 +86,7 @@ export default function Nav() {
           </ul>
           <div className="mt-6 pt-4 border-t border-line/60 flex items-center justify-end">
             <a
-              href="#kontak"
+              href="#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 font-mono text-xs uppercase text-white shadow-sm"
             >

@@ -82,14 +82,14 @@ export default function Hero() {
 
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
             <a
-              href="#karya"
+              href="#work"
               className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 font-mono text-xs uppercase tracking-widest text-white transition-all hover:bg-accent/90 hover:scale-[1.02] shadow-md font-semibold"
             >
               Explore Portfolio
               <ArrowDownRight className="h-4 w-4" />
             </a>
             <a
-              href="#kontak"
+              href="#contact"
               className="inline-flex items-center gap-1.5 rounded-full border border-line bg-paper-surface px-5 py-3.5 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:border-accent hover:text-accent font-medium shadow-xs"
             >
               <MessageSquare className="h-3.5 w-3.5" />

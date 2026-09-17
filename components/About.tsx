@@ -53,7 +53,7 @@ const principles = [
 
 export default function About() {
   return (
-    <section id="tentang" className="border-t border-line bg-paper-surface/40 py-24">
+    <section id="about" className="border-t border-line bg-paper-surface/40 py-24">
       <div className="mx-auto max-w-5xl px-6">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
