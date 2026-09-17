@@ -122,7 +122,7 @@ export default function Contact() {
                 <span>LinkedIn</span>
               </a>
               <a
-                href="https://github.com/ulviayulianti"
+                href="https://github.com/ulvia-10"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"

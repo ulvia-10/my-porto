@@ -49,7 +49,6 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-24">
-      {/* Background Radial Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-[500px] w-[800px] opacity-30 dark:opacity-20 blur-3xl bg-gradient-to-tr from-accent via-indigo-500 to-purple-500 rounded-full"
@@ -76,8 +75,8 @@ export default function Hero() {
             variants={item}
             className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-[3.5rem]"
           >
-            Crafting web interfaces that feel
-            <span className="text-accent"> thoughtfully engineered</span>, not just built.
+            Hi 👋, I&apos;m Ulvia — building
+            <span className="text-accent"> thoughtfully engineered</span> web interfaces.
           </motion.h1>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">

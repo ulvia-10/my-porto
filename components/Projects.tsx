@@ -47,8 +47,8 @@ const projects: Project[] = [
     stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "Recharts", "REST API"],
     gradient: "from-blue-600 via-indigo-600 to-sky-500",
     highlightBadge: "⚡ Performance: 98/100",
-    live: "https://github.com/ulviayulianti",
-    code: "https://github.com/ulviayulianti",
+    live: "https://github.com/ulvia-10",
+    code: "https://github.com/ulvia-10",
   },
   {
     id: "umkm-landing",
@@ -68,8 +68,8 @@ const projects: Project[] = [
     stack: ["WordPress", "Elementor Pro", "Custom CSS", "SEO Suite", "WooCommerce"],
     gradient: "from-amber-600 via-orange-500 to-yellow-500",
     highlightBadge: "🚀 Conversion: +35%",
-    live: "https://github.com/ulviayulianti",
-    code: "https://github.com/ulviayulianti",
+    live: "https://github.com/ulvia-10",
+    code: "https://github.com/ulvia-10",
   },
   {
     id: "design-system",
@@ -89,8 +89,8 @@ const projects: Project[] = [
     stack: ["React 19", "TypeScript", "Framer Motion", "Tailwind CSS", "Storybook"],
     gradient: "from-teal-600 via-emerald-500 to-cyan-500",
     highlightBadge: "♿ Accessibility: 100%",
-    live: "https://github.com/ulviayulianti",
-    code: "https://github.com/ulviayulianti",
+    live: "https://github.com/ulvia-10",
+    code: "https://github.com/ulvia-10",
   },
 ];
 
