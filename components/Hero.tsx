@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
-import { ArrowDownRight, Download, Copy, Check, Sparkles, MessageSquare } from "lucide-react";
+import { ArrowDownRight, Download, Copy, Check, Sparkles, MessageSquare, User, Code2 } from "lucide-react";
+import Image from "next/image";
+import profilePic from "../public/ulvia-profile.jpg";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -36,6 +38,7 @@ const stats = [
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
+  const [activeTab, setActiveTab] = useState<"photo" | "code">("photo");
 
   const handleCopyCode = () => {
     const rawText = codeLines.map((l) => " ".repeat(l.indent * 2) + l.text).join("\n");
@@ -60,7 +63,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="mx-auto grid max-w-5xl gap-12 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center relative z-10">
+      <div className="mx-auto grid max-w-5xl gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center relative z-10">
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.div variants={item} className="mb-5 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-3 py-1 font-mono text-xs uppercase tracking-[0.15em] text-accent font-semibold shadow-xs">
@@ -76,14 +79,6 @@ export default function Hero() {
             Crafting web interfaces that feel
             <span className="text-accent"> thoughtfully engineered</span>, not just built.
           </motion.h1>
-
-          <motion.p
-            variants={item}
-            className="mt-6 max-w-lg text-base leading-relaxed text-ink-dim sm:text-lg"
-          >
-            I&apos;m Ulvia — designing and building modern web applications with React &amp; Next.js.
-            Focused on high performance, clean TypeScript architecture, and intuitive user experiences.
-          </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
             <a
@@ -128,71 +123,138 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Profile Card / TypeScript Code Snippet */}
+
         <motion.div
           initial={{ opacity: 0, y: 24, rotate: -1 }}
           animate={{ opacity: 1, y: 0, rotate: -1 }}
           transition={{ duration: 0.7, delay: 0.3, ease: easeOut }}
           whileHover={{ rotate: 0, scale: 1.01 }}
-          className="relative mx-auto w-full max-w-sm rounded-2xl border border-line bg-paper-surface p-5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.18)] transition-all"
+          className="relative mx-auto w-full max-w-sm rounded-2xl border border-line bg-paper-surface p-4 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.18)] transition-all"
         >
-          <div className="mb-4 flex items-center justify-between border-b border-line/50 pb-3">
+          <div className="mb-3 flex items-center justify-between border-b border-line/50 pb-2.5">
             <div className="flex items-center gap-1.5">
-              <span className="h-3 w-3 rounded-full bg-red-500/80" />
-              <span className="h-3 w-3 rounded-full bg-amber-500/80" />
-              <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
-              <span className="ml-2 font-mono text-[11px] text-ink-dim font-medium">developer.ts</span>
+              <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+              <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
             </div>
-            <button
-              onClick={handleCopyCode}
-              className="inline-flex items-center gap-1 font-mono text-[10px] text-ink-dim hover:text-accent transition-colors cursor-pointer px-2 py-1 rounded-md hover:bg-paper"
-              title="Copy snippet"
-            >
-              {copied ? (
-                <>
-                  <Check className="h-3.5 w-3.5 text-emerald-500" />
-                  <span className="text-emerald-500 font-semibold">Copied</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="h-3.5 w-3.5" />
-                  <span>Copy</span>
-                </>
-              )}
-            </button>
+
+            {/* Toggle Tabs */}
+            <div className="flex items-center gap-1 rounded-lg bg-paper p-0.5 border border-line/60">
+              <button
+                onClick={() => setActiveTab("photo")}
+                className={`flex items-center gap-1 rounded-md px-2 py-0.5 text-[10px] font-mono transition-all ${activeTab === "photo"
+                  ? "bg-accent text-white font-semibold shadow-xs"
+                  : "text-ink-dim hover:text-ink"
+                  }`}
+              >
+                <User className="h-3 w-3" />
+                <span>Photo</span>
+              </button>
+              <button
+                onClick={() => setActiveTab("code")}
+                className={`flex items-center gap-1 rounded-md px-2 py-0.5 text-[10px] font-mono transition-all ${activeTab === "code"
+                  ? "bg-accent text-white font-semibold shadow-xs"
+                  : "text-ink-dim hover:text-ink"
+                  }`}
+              >
+                <Code2 className="h-3 w-3" />
+                <span>Code</span>
+              </button>
+            </div>
           </div>
-          <pre className="overflow-x-auto font-mono text-[12px] leading-relaxed text-ink-dim">
-            {codeLines.map((line, i) => (
-              <div key={i} style={{ paddingLeft: `${line.indent * 0.8}rem` }} className="py-0.5">
-                <span className="mr-3 select-none text-ink-dim/40">{i + 1}</span>
-                <span
-                  className={
-                    i === 0 || i === codeLines.length - 1
-                      ? "text-ink font-semibold"
-                      : line.text.includes("status")
-                      ? "text-emerald-600 dark:text-emerald-400 font-medium"
-                      : line.text.includes("role")
-                      ? "text-accent font-medium"
-                      : ""
-                  }
-                >
-                  {line.text}
-                </span>
+
+          {/* Photo Content */}
+          {activeTab === "photo" ? (
+            <div className="relative overflow-hidden rounded-xl bg-gradient-to-b from-accent/5 to-accent/20 p-1.5">
+              <div className="relative h-96 w-full overflow-hidden rounded-lg border border-line/50 shadow-inner">
+                <Image
+                  src={profilePic}
+                  alt="Ulvia Yulianti - Frontend Developer"
+                  fill
+                  quality={100}
+                  unoptimized
+                  priority
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
+
+                {/* Floating Overlay Info */}
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-display text-base font-bold drop-shadow-md">
+                        Ulvia Yulianti
+                      </h3>
+                      <p className="font-mono text-[10px] text-emerald-300 font-medium">
+                        Frontend Web Developer
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-2 py-0.5 font-mono text-[9px] text-white/90">
+                      Jakarta, ID
+                    </span>
+                  </div>
+                </div>
               </div>
-            ))}
-          </pre>
+            </div>
+          ) : (
+            /* Code Content */
+            <div>
+              <div className="mb-2 flex items-center justify-between">
+                <span className="font-mono text-[10px] text-ink-dim/70">developer.ts</span>
+                <button
+                  onClick={handleCopyCode}
+                  className="inline-flex items-center gap-1 font-mono text-[10px] text-ink-dim hover:text-accent transition-colors cursor-pointer px-2 py-0.5 rounded-md hover:bg-paper"
+                  title="Copy snippet"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="h-3.5 w-3.5 text-emerald-500" />
+                      <span className="text-emerald-500 font-semibold">Copied</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-3.5 w-3.5" />
+                      <span>Copy</span>
+                    </>
+                  )}
+                </button>
+              </div>
+              <pre className="overflow-x-auto font-mono text-[12px] leading-relaxed text-ink-dim py-2">
+                {codeLines.map((line, i) => (
+                  <div key={i} style={{ paddingLeft: `${line.indent * 0.8}rem` }} className="py-0.5">
+                    <span className="mr-3 select-none text-ink-dim/40">{i + 1}</span>
+                    <span
+                      className={
+                        i === 0 || i === codeLines.length - 1
+                          ? "text-ink font-semibold"
+                          : line.text.includes("status")
+                            ? "text-emerald-600 dark:text-emerald-400 font-medium"
+                            : line.text.includes("role")
+                              ? "text-accent font-medium"
+                              : ""
+                      }
+                    >
+                      {line.text}
+                    </span>
+                  </div>
+                ))}
+              </pre>
+            </div>
+          )}
+
           <div className="mt-4 border-t border-line/50 pt-3 flex items-center justify-between text-[11px] font-mono text-ink-dim">
             <span className="flex items-center gap-2 font-medium">
-              <span className="relative flex h-2 w-2">
+              <span className="relative flex h-2 w-2 items-center">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_6px_#10b981]" />
               </span>
               Ready for collaboration
             </span>
-            <span className="text-accent font-semibold">TypeScript 5.0</span>
           </div>
         </motion.div>
       </div>
     </section>
   );
 }
+

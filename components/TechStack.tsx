@@ -119,7 +119,7 @@ const techStack: TechItem[] = [
 
 export default function TechStack() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-20 border-t border-line/60">
+    <section id="keahlian" className="mx-auto max-w-5xl px-6 py-20 border-t border-line/60">
       <div className="mb-10 text-center sm:text-left">
         <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent flex items-center gap-1.5 justify-center sm:justify-start font-semibold">
           <Cpu className="h-3.5 w-3.5" />
