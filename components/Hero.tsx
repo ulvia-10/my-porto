@@ -31,7 +31,7 @@ const codeLines = [
 ];
 
 const stats = [
-  { value: "2+ Yrs", label: "Industry Experience", sub: "PT Global Service Indonesia" },
+  { value: "4+ Yrs", label: "Industry Experience", sub: "PT Global Service Indonesia" },
   { value: "3.78", label: "Binus University GPA", sub: "B.S. Information Systems" },
   { value: "98+", label: "Lighthouse Speed Index", sub: "Clean & Accessible Code" },
 ];
