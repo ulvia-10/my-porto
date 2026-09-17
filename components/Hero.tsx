@@ -31,9 +31,9 @@ const codeLines = [
 ];
 
 const stats = [
-  { value: "4+ Yrs", label: "Industry Experience", sub: "PT Global Service Indonesia" },
-  { value: "3.78", label: "Binus University GPA", sub: "B.S. Information Systems" },
-  { value: "98+", label: "Lighthouse Speed Index", sub: "Clean & Accessible Code" },
+  { value: "4+ Yrs", label: "Industry Experience", sub: "Frontend Web Development" },
+  { value: "React 19", label: "Core Framework", sub: "Next.js & TypeScript" },
+  { value: "100%", label: "Responsive Design", sub: "Pixel-Perfect & Accessible" },
 ];
 
 export default function Hero() {
